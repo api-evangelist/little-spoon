@@ -1,0 +1,28 @@
+generated: '2026-08-25'
+method: searched
+source: >-
+  https://www.littlespoon.com/ (200), https://www.littlespoon.com/plan-type (200),
+  https://www.littlespoon.com/pricing (404), https://www.littlespoon.com/plans (404),
+  https://www.littlespoon.com/faq (200) — searched 2026-08-25
+provider: Little Spoon
+plan_count: 0
+plans: []
+summary: >-
+  Little Spoon publishes no API plans, no developer tiers and no API pricing of any kind, because it
+  runs no developer program. There is no /pricing or /plans page on the site at all: consumer
+  subscription pricing is only revealed inside the signup funnel at /plan-type after a shopper
+  selects a child's age and product line, and per-product "starting at" prices appear in individual
+  product descriptions.
+consumer_pricing_note: >-
+  Per-unit consumer prices are carried as a productPrices array on each object returned by the
+  undocumented https://api.littlespoon.com/v1/products endpoint, and some product descriptions embed
+  a "Starting at $X.XX per pouch" string. Those are retail food prices, not API plans, and are not
+  recorded here as plans.
+evidence:
+- url: https://www.littlespoon.com/pricing
+  status: 404
+- url: https://www.littlespoon.com/plans
+  status: 404
+- url: https://www.littlespoon.com/plan-type
+  status: 200
+  note: Consumer subscription signup funnel — requires selecting a plan type before any price is shown.

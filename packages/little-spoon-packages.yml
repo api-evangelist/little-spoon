@@ -1,0 +1,206 @@
+generated: '2026-08-25'
+method: searched
+source: https://registry.npmjs.org/-/v1/search?text=%40littlespoon (npm registry metadata endpoint, per-package
+  https://registry.npmjs.org/<pkg>); repo https://github.com/little-spoon-dev/design-system
+provider: Little Spoon
+summary: 'Little Spoon publishes fifteen first-party npm packages under the @littlespoon scope. They are
+  the Little Spoon Design System — React UI components, an icon set and a theme — not API client libraries.
+  Little Spoon publishes no API contract and no API SDK, so these are recorded as Packages/Components
+  and deliberately NOT wired as type: SDKs: the sdk_count check reads client libraries for an API, and
+  crediting a design system against it would assert a developer program Little Spoon does not run.'
+ownership: 'First-party: every package points at git+https://github.com/little-spoon-dev/design-system,
+  and the little-spoon-dev GitHub org declares https://www.littlespoon.com/ as its blog/website.'
+registries_searched:
+- registry: npm
+  result: 15 packages under the @littlespoon scope
+- registry: PyPI
+  result: none
+- registry: Maven Central
+  result: none
+- registry: NuGet
+  result: none
+- registry: pkg.go.dev
+  result: none
+- registry: RubyGems
+  result: none
+- registry: Packagist
+  result: none
+- registry: crates.io
+  result: none
+package_count: 15
+official_count: 15
+api_client_sdk_count: 0
+currency:
+  latest_publish_date: '2025-09-08'
+  oldest_publish_date: '2023-04-19'
+  note: Fourteen of fifteen packages were last published 2025-09-08 in a single coordinated Lerna release;
+    @littlespoon/divider has not shipped since 2023-04-19. The repo's last push was 2025-09-08T15:13:06Z,
+    so the whole design system has been dormant for roughly eleven months as of this probe.
+license_note: Every package declares "UNLICENSED" in package.json and the GitHub repo carries no LICENSE
+  file, so the source is public but not openly licensed.
+packages:
+- name: '@littlespoon/accordion'
+  registry: npm
+  url: https://www.npmjs.com/package/@littlespoon/accordion
+  language: JavaScript/TypeScript
+  official: true
+  kind: ui-component-library
+  version: 1.1.8
+  published: '2025-09-08'
+  license: UNLICENSED
+  description: Little Spoon accordion
+  source_code: https://github.com/little-spoon-dev/design-system
+- name: '@littlespoon/alert'
+  registry: npm
+  url: https://www.npmjs.com/package/@littlespoon/alert
+  language: JavaScript/TypeScript
+  official: true
+  kind: ui-component-library
+  version: 1.4.6
+  published: '2025-09-08'
+  license: UNLICENSED
+  description: Little Spoon alert
+  source_code: https://github.com/little-spoon-dev/design-system
+- name: '@littlespoon/box'
+  registry: npm
+  url: https://www.npmjs.com/package/@littlespoon/box
+  language: JavaScript/TypeScript
+  official: true
+  kind: ui-component-library
+  version: 1.3.7
+  published: '2025-09-08'
+  license: UNLICENSED
+  description: Little Spoon box
+  source_code: https://github.com/little-spoon-dev/design-system
+- name: '@littlespoon/breadcrumbs'
+  registry: npm
+  url: https://www.npmjs.com/package/@littlespoon/breadcrumbs
+  language: JavaScript/TypeScript
+  official: true
+  kind: ui-component-library
+  version: 1.3.8
+  published: '2025-09-08'
+  license: UNLICENSED
+  description: Little Spoon breadcrumbs
+  source_code: https://github.com/little-spoon-dev/design-system
+- name: '@littlespoon/button'
+  registry: npm
+  url: https://www.npmjs.com/package/@littlespoon/button
+  language: JavaScript/TypeScript
+  official: true
+  kind: ui-component-library
+  version: 1.8.2
+  published: '2025-09-08'
+  license: UNLICENSED
+  description: Little Spoon button
+  source_code: https://github.com/little-spoon-dev/design-system
+- name: '@littlespoon/checkbox'
+  registry: npm
+  url: https://www.npmjs.com/package/@littlespoon/checkbox
+  language: JavaScript/TypeScript
+  official: true
+  kind: ui-component-library
+  version: 1.3.7
+  published: '2025-09-08'
+  license: UNLICENSED
+  description: Little Spoon checkbox
+  source_code: https://github.com/little-spoon-dev/design-system
+- name: '@littlespoon/divider'
+  registry: npm
+  url: https://www.npmjs.com/package/@littlespoon/divider
+  language: JavaScript/TypeScript
+  official: true
+  kind: ui-component-library
+  version: 1.2.2
+  published: '2023-04-19'
+  license: UNLICENSED
+  description: Little Spoon divider
+  source_code: https://github.com/little-spoon-dev/design-system
+- name: '@littlespoon/drawer'
+  registry: npm
+  url: https://www.npmjs.com/package/@littlespoon/drawer
+  language: JavaScript/TypeScript
+  official: true
+  kind: ui-component-library
+  version: 1.6.4
+  published: '2025-09-08'
+  license: UNLICENSED
+  description: Little Spoon drawer
+  source_code: https://github.com/little-spoon-dev/design-system
+- name: '@littlespoon/icons'
+  registry: npm
+  url: https://www.npmjs.com/package/@littlespoon/icons
+  language: JavaScript/TypeScript
+  official: true
+  kind: ui-component-library
+  version: 2.1.4
+  published: '2025-09-08'
+  license: UNLICENSED
+  description: Little Spoon icons
+  source_code: https://github.com/little-spoon-dev/design-system
+- name: '@littlespoon/label'
+  registry: npm
+  url: https://www.npmjs.com/package/@littlespoon/label
+  language: JavaScript/TypeScript
+  official: true
+  kind: ui-component-library
+  version: 1.1.7
+  published: '2025-09-08'
+  license: UNLICENSED
+  description: Little Spoon label
+  source_code: https://github.com/little-spoon-dev/design-system
+- name: '@littlespoon/link'
+  registry: npm
+  url: https://www.npmjs.com/package/@littlespoon/link
+  language: JavaScript/TypeScript
+  official: true
+  kind: ui-component-library
+  version: 1.3.4
+  published: '2025-09-08'
+  license: UNLICENSED
+  description: Little Spoon link
+  source_code: https://github.com/little-spoon-dev/design-system
+- name: '@littlespoon/tag'
+  registry: npm
+  url: https://www.npmjs.com/package/@littlespoon/tag
+  language: JavaScript/TypeScript
+  official: true
+  kind: ui-component-library
+  version: 1.3.16
+  published: '2025-09-08'
+  license: UNLICENSED
+  description: Little Spoon tag
+  source_code: https://github.com/little-spoon-dev/design-system
+- name: '@littlespoon/theme'
+  registry: npm
+  url: https://www.npmjs.com/package/@littlespoon/theme
+  language: JavaScript/TypeScript
+  official: true
+  kind: ui-component-library
+  version: 1.16.0
+  published: '2025-09-08'
+  license: UNLICENSED
+  description: Little Spoon theme
+  source_code: https://github.com/little-spoon-dev/design-system
+- name: '@littlespoon/typography'
+  registry: npm
+  url: https://www.npmjs.com/package/@littlespoon/typography
+  language: JavaScript/TypeScript
+  official: true
+  kind: ui-component-library
+  version: 1.8.0
+  published: '2025-09-08'
+  license: UNLICENSED
+  description: Little Spoon typography
+  source_code: https://github.com/little-spoon-dev/design-system
+- name: '@littlespoon/ui'
+  registry: npm
+  url: https://www.npmjs.com/package/@littlespoon/ui
+  language: JavaScript/TypeScript
+  official: true
+  kind: ui-component-library
+  version: 1.23.0
+  published: '2025-09-08'
+  license: UNLICENSED
+  description: Little Spoon UI
+  source_code: https://github.com/little-spoon-dev/design-system

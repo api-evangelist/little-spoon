@@ -1,0 +1,115 @@
+generated: '2026-08-25'
+method: probed
+source: >-
+  Observed on live unauthenticated responses from https://api.littlespoon.com/v1,
+  https://api.littlespoon.com/v1/products, https://api.littlespoon.com/v1/labels,
+  https://api.littlespoon.com/health and an OPTIONS to https://api.littlespoon.com/v1 — 2026-08-25.
+  Little Spoon publishes no API documentation, so nothing below is derived from a spec or a docs
+  page; every convention is read off the wire and is stated as observed, not as documented.
+provider: Little Spoon
+documented: false
+documentation_url: null
+scope_note: >-
+  These conventions describe api.littlespoon.com, the undocumented first-party JSON backend behind
+  the littlespoon.com storefront. Little Spoon does not offer it as a product and publishes no
+  contract for it. Treat every entry as an observation with no stability guarantee.
+authentication:
+  style: none-observed
+  detail: >-
+    The probed read endpoints (/v1, /health, /v1/products, /v1/labels) require no credential, no
+    API key header and no cookie. Authenticated surfaces exist behind the storefront login
+    (https://www.littlespoon.com/login) but no authentication scheme is published, so
+    authentication/ is not written — there is nothing to describe without fabricating it.
+  api_key_header: null
+  oauth: false
+base_url: https://api.littlespoon.com
+versioning:
+  style: uri-path
+  current: /v1
+  see: lifecycle/little-spoon-lifecycle.yml
+content_negotiation:
+  request: >-
+    JSON only. An OPTIONS to /v1 with no JSON body returns HTTP 400
+    {"type":"E_VALIDATION","message":"Only JSON is allowed."}, so the router rejects non-JSON media
+    types at the edge.
+  response: application/json; charset=utf-8
+response_envelope:
+  shape: inconsistent
+  detail: >-
+    /v1/products returns an object wrapper {"data":[ ... ]}. /v1/labels returns a bare top-level
+    JSON array with no wrapper. /v1 returns a bare object {"start":..., "version":...}. /health
+    returns the two-byte text/plain string "OK". Four endpoints, four envelope shapes — a client
+    cannot assume one.
+  examples:
+  - url: https://api.littlespoon.com/v1/products
+    shape: '{"data": [Product, ...]}'
+  - url: https://api.littlespoon.com/v1/labels
+    shape: '[Label, ...]'
+  - url: https://api.littlespoon.com/v1
+    shape: '{"start": ISO8601, "version": "0.0.1"}'
+error_envelope:
+  shape: '{"type": <SCREAMING_SNAKE code>, "message": <human string>}'
+  rfc9457: false
+  content_type: application/json; charset=utf-8
+  observed:
+  - status: 400
+    body: '{"type":"E_VALIDATION","message":"Only JSON is allowed."}'
+    from: OPTIONS https://api.littlespoon.com/v1
+  - status: 404
+    body: 'Not Found'
+    content_type: text/plain; charset=utf-8
+    from: any unmatched path on api.littlespoon.com
+  note: >-
+    Structured errors and plain-text errors coexist: an unmatched route falls through to a bare
+    text/plain 404 while a handled validation failure returns the JSON envelope. Only one error code
+    (E_VALIDATION) was observed; no error catalog is published and none is authored here.
+pagination:
+  supported: false
+  detail: >-
+    /v1/products returns all 160 products in a single 765KB response. No page, per_page, limit,
+    offset, cursor, next or Link member was present in the body or headers.
+filtering_and_expansion:
+  sparse_fieldsets: false
+  expansion: false
+  detail: >-
+    Responses are fully expanded by default — each Product embeds its images, labels, allergens,
+    dietary tags, prices and sub-products inline. There is no observed mechanism to narrow them.
+metadata: null
+request_id_tracing:
+  provider_request_id: false
+  detail: >-
+    No X-Request-Id or equivalent correlation header is returned. The only per-request identifier is
+    Cloudflare's cf-ray, which is the CDN's, not Little Spoon's.
+rate_limit_signaling:
+  supported: true
+  headers:
+  - rate-limit-total
+  - rate-limit-remaining
+  - rate-limit-reset
+  standard: none — non-standard spelling; see rate-limits/little-spoon-rate-limits.yml
+idempotency:
+  supported: na
+  detail: >-
+    Not applicable. No public write surface was found on api.littlespoon.com, so there is no
+    non-idempotent operation for an idempotency key to protect. No Idempotency pointer is emitted.
+dry_run_mode:
+  supported: na
+  detail: Not applicable — no public write surface.
+reversibility:
+  grade: na
+  detail: >-
+    Not applicable. Every publicly reachable operation found on api.littlespoon.com is a GET
+    returning catalog data (/v1, /health, /v1/products, /v1/labels); nothing creates, modifies,
+    charges or deletes anything, so there is no action for an agent to take back. Consumer-facing
+    reversals do exist as a human workflow — subscription skip, reschedule and cancel are described
+    at https://learn.littlespoon.com/ — but they are account-portal flows behind a login with no
+    published API operation and no stated window, so no reversal operation and no window is asserted
+    here. Recording a window Little Spoon has not published would be the one error in this artifact
+    that could cost a customer money.
+  write_surfaces: []
+  reversal_operations: []
+cross_references:
+  rate_limits: rate-limits/little-spoon-rate-limits.yml
+  lifecycle: lifecycle/little-spoon-lifecycle.yml
+  conformance: conformance/little-spoon-conformance.yml
+  well_known: well-known/little-spoon-well-known.yml

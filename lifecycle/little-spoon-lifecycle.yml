@@ -1,0 +1,62 @@
+generated: '2026-08-25'
+method: probed
+source: >-
+  https://api.littlespoon.com/v1 (200), https://api.littlespoon.com/health (200), plus searches of
+  https://www.littlespoon.com and https://learn.littlespoon.com for a status page, versioning policy,
+  deprecation policy, SLA or changelog — 2026-08-25
+provider: Little Spoon
+summary: >-
+  Little Spoon publishes no versioning policy, no deprecation policy, no SLA, no status page and no
+  changelog. The only lifecycle signal that exists is observable rather than published: its
+  undocumented API host uses URI-path versioning and self-reports a version string. No StatusPage and
+  no Deprecation pointer is emitted, because neither document exists.
+versioning:
+  scheme: uri-path
+  scheme_evidence: >-
+    https://api.littlespoon.com/v1 returns 200; https://api.littlespoon.com/v2 returns 404. The
+    version is carried in the first path segment.
+  current_version: 0.0.1
+  current_version_evidence: >-
+    GET https://api.littlespoon.com/v1 -> {"start":"2026-08-25T22:49:56.800Z","version":"0.0.1"}.
+    The `start` field appears to be process start time, which also means the service reports uptime
+    anonymously.
+  policy_documented: false
+  policy_url: null
+deprecation:
+  policy_documented: false
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  rfc8594: false
+  evidence: >-
+    No Sunset or Deprecation response header was observed on any probed response from
+    api.littlespoon.com, and no deprecation policy page exists on littlespoon.com.
+  deprecated_operations: []
+status_page:
+  published: false
+  url: null
+  evidence: >-
+    https://status.littlespoon.com does not resolve (DNS failure, curl exit 6). No status.io,
+    statuspage.io, instatus or better-uptime page is linked from littlespoon.com or
+    learn.littlespoon.com.
+  health_endpoint:
+    url: https://api.littlespoon.com/health
+    status: 200
+    body: 'OK'
+    note: >-
+      A bare liveness endpoint, not a status page. It reports two bytes and no component or incident
+      detail, and it is not advertised anywhere Little Spoon publishes.
+sla:
+  published: false
+  url: null
+changelog:
+  published: false
+  url: null
+  evidence: >-
+    No /changelog, /releases or release-notes surface exists on littlespoon.com; the design-system
+    repo publishes GitHub releases but no product or API changelog.
+component_lifecycle:
+  note: >-
+    The @littlespoon/* design system carries the only versioned, dated release history Little Spoon
+    publishes. Fourteen of fifteen packages last released 2025-09-08; @littlespoon/divider last
+    released 2023-04-19. See packages/little-spoon-packages.yml.

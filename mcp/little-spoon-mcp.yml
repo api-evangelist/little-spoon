@@ -1,0 +1,35 @@
+generated: '2026-08-25'
+method: probed
+source: >-
+  Searches for a hosted or packaged Little Spoon MCP server (npm registry @littlespoon scope, npm
+  full-text search, github.com/little-spoon-dev, web search) plus direct probes of
+  https://www.littlespoon.com/.well-known/mcp.json (404) and
+  https://api.littlespoon.com/.well-known/mcp.json (404) — 2026-08-25
+provider: Little Spoon
+status: none
+summary: >-
+  Little Spoon ships no MCP server, hosted or local. No /mcp endpoint, no /.well-known/mcp.json, no
+  @littlespoon MCP package on npm, and nothing MCP-shaped in the little-spoon-dev GitHub org (one
+  public repo, a React design system). No candidate tool list is derived either: deriving one
+  requires an OpenAPI to ground the tools in, and Little Spoon publishes no spec. No MCPServer
+  pointer is emitted from this file — the file records a verified absence.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: probed
+tools: []
+tool_count: 0
+evidence:
+- url: https://www.littlespoon.com/.well-known/mcp.json
+  status: 404
+- url: https://api.littlespoon.com/.well-known/mcp.json
+  status: 404
+- url: https://registry.npmjs.org/-/v1/search?text=%40littlespoon
+  status: 200
+  note: 15 packages, all design-system UI components; no MCP server package.
+- url: https://api.github.com/orgs/little-spoon-dev/repos
+  status: 200
+  note: One public repo (design-system); no MCP implementation.

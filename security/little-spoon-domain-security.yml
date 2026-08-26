@@ -1,0 +1,32 @@
+generated: '2026-08-25'
+method: probed
+source: live DNS/TLS/HTTP probes of the littlespoon.com web host and the api.littlespoon.com API host
+hosts:
+- host: www.littlespoon.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  7 18:42:48 2026 GMT
+  hsts: true
+  hsts_max_age: 7776000
+- host: api.littlespoon.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  7 18:42:48 2026 GMT
+  hsts: true
+  hsts_max_age: 7776000
+  hsts_include_subdomains: true
+  note: >-
+    Undocumented first-party JSON API host, fronted by Cloudflare over a Heroku router
+    (via: 2.0 heroku-router). Probed 2026-08-25.
+domains:
+- domain: littlespoon.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
+notes:
+- No CAA record is published on littlespoon.com, so certificate issuance is not constrained to a
+  named CA.
+- DNSSEC is not enabled on littlespoon.com.
+- DMARC policy is p=quarantine rather than p=reject.

@@ -1,0 +1,99 @@
+generated: '2026-08-25'
+method: searched
+source: >-
+  https://www.littlespoon.com/llms.txt (200), https://www.littlespoon.com/our-standards (200),
+  https://www.littlespoon.com/testing-hub (200), https://www.littlespoon.com/privacy-policy (200),
+  and live probes of https://api.littlespoon.com — searched 2026-08-25
+provider: Little Spoon
+summary: >-
+  Little Spoon publishes no API contract, no OAuth surface and no security/compliance program, so
+  every cross-cutting API standard below is asserted false with the probe that establishes it. It
+  does publish an unusually detailed set of FOOD-SAFETY certifications, which are recorded separately
+  under product_certifications. Those are product certifications, not published API or information-
+  security compliance, so no type Compliance pointer is emitted from this file — the
+  compliance_published check measures SOC 2 / ISO 27001 / HIPAA / GDPR-class posture and crediting
+  USDA Organic against it would be a category error.
+standards:
+- id: oauth2
+  conforms: false
+  evidence: >-
+    https://www.littlespoon.com/.well-known/oauth-authorization-server -> 404 and
+    https://api.littlespoon.com/.well-known/oauth-authorization-server -> 404. No OAuth surface of
+    any kind is published.
+- id: oidc
+  conforms: false
+  evidence: 'https://www.littlespoon.com/.well-known/openid-configuration -> 404.'
+- id: rfc9457
+  conforms: false
+  evidence: >-
+    The only error envelope observed on api.littlespoon.com is
+    {"type":"E_VALIDATION","message":"Only JSON is allowed."} served as application/json, not
+    application/problem+json, and with no type URI, title, status or detail members.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: '/.well-known/security.txt -> 404 on www.littlespoon.com and api.littlespoon.com.'
+- id: rfc9727-api-catalog
+  conforms: false
+  evidence: '/.well-known/api-catalog -> 404 on every host.'
+- id: rate-limit-headers
+  conforms: false
+  evidence: >-
+    api.littlespoon.com emits rate-limit-total / rate-limit-remaining / rate-limit-reset. Those are
+    a non-standard spelling — neither the IETF RateLimit-* draft form nor the X-RateLimit-*
+    convention — so a standards-aware client will not read them. Recorded in
+    rate-limits/little-spoon-rate-limits.yml.
+- id: pagination
+  conforms: false
+  evidence: >-
+    https://api.littlespoon.com/v1/products returns all 160 products in one 765KB
+    {"data":[...]} response with no page, cursor, limit or link members.
+- id: idempotency
+  conforms: false
+  evidence: >-
+    No idempotency key header or documentation exists; there is no published write surface to apply
+    it to.
+- id: openapi
+  conforms: false
+  evidence: >-
+    /openapi.json, /openapi.yaml, /swagger.json, /v1/openapi.json, /api-docs, /docs, /redoc all 404
+    on both www.littlespoon.com and api.littlespoon.com.
+- id: graphql
+  conforms: false
+  evidence: '/graphql -> 404 on www.littlespoon.com and api.littlespoon.com.'
+- id: asyncapi
+  conforms: false
+  evidence: No event, streaming or webhook surface is documented or discoverable.
+- id: a2a
+  conforms: false
+  evidence: >-
+    /.well-known/agent-card.json and /.well-known/agent.json -> 404 on www., api., ds. and learn.
+    littlespoon.com.
+- id: mcp
+  conforms: false
+  evidence: 'No hosted MCP endpoint and no /.well-known/mcp.json (404 on every host).'
+domain_standard:
+  id: null
+  conforms: false
+  evidence: >-
+    Little Spoon's market is direct-to-consumer children's food. The nearest machine-readable domain
+    standard for a DTC commerce brand is the agentic-commerce pair /.well-known/ucp.json and
+    /.well-known/acp.json; both return 404 on www.littlespoon.com and api.littlespoon.com. GS1
+    product identifiers, schema.org/Product markup and OpenRTB are not applicable as contract-level
+    declarations here. This is a reward-only dimension and nothing is invented to fill it.
+product_certifications:
+  note: >-
+    Food-safety and organic certifications Little Spoon publishes about its products. Captured for
+    completeness and provenance; NOT wired as an API compliance claim.
+  source: https://www.littlespoon.com/llms.txt
+  certifications:
+  - USDA Organic
+  - EU Organic
+  - Certified Pesticide Free
+  - Clean Label Purity Award
+  - Clean Label First 1,000 Day Promise Award
+  - Non-GMO
+  claims:
+  - 500+ toxins and contaminants tested across baby and toddler lines
+  - 2000+ safety tests per batch of infant Formula
+  - Published No-No List of 100+ banned ingredients
+  - HPP (high-pressure processing) rather than heat pasteurization on purees

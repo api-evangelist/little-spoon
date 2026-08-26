@@ -1,0 +1,126 @@
+generated: '2026-08-25'
+method: probed
+source: direct HTTPS GETs of each /.well-known/ path on every Little Spoon host, 2026-08-25
+summary: >-
+  Exactly one document is served under /.well-known/ across every Little Spoon host: an
+  apple-app-site-association at www.littlespoon.com, which supports Universal Links into the Little
+  Spoon iOS app. Every other path 404s — www.littlespoon.com answers with its Next.js 404 HTML page
+  (~6.7KB text/html), api.littlespoon.com with a 9-byte text/plain "Not Found", and ds./learn. with
+  their own 404 shells. NO WellKnown, APICatalog or SecurityTxt pointer is emitted. An
+  apple-app-site-association is a mobile deep-link manifest, not an RFC 9727 api-catalog linkset,
+  and the well_known_catalog check exists to measure the latter; crediting it here would assert an
+  agent discovery entrypoint Little Spoon does not serve. No security.txt, no OAuth metadata, no
+  agentic-commerce document (ucp.json / acp.json) is published on any host.
+hosts:
+- host: www.littlespoon.com
+  documents:
+  - path: /.well-known/apple-app-site-association
+    status: 200
+    content_type: application/json; charset=utf-8
+    bytes: 262
+    file: little-spoon-apple-app-site-association.json
+    note: >-
+      Real served document. Declares appID X87H9679FJ.com.littlespoon.littlespoon for Universal
+      Links on /account* and /login, plus activitycontinuation and webcredentials. Mobile
+      deep-linking, not API discovery.
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /.well-known/ucp.json
+    status: 404
+    file: null
+  - path: /.well-known/acp.json
+    status: 404
+    file: null
+  - path: /.well-known/aipref.json
+    status: 404
+    file: null
+  - path: /.well-known/mcp.json
+    status: 404
+    file: null
+  - path: /.well-known/assetlinks.json
+    status: 404
+    file: null
+  - path: /.well-known/change-password
+    status: 404
+    file: null
+- host: api.littlespoon.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /.well-known/ucp.json
+    status: 404
+    file: null
+  - path: /.well-known/acp.json
+    status: 404
+    file: null
+  - path: /.well-known/apple-app-site-association
+    status: 404
+    file: null
+- host: ds.littlespoon.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: learn.littlespoon.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+other_root_documents:
+- host: www.littlespoon.com
+  path: /llms.txt
+  status: 200
+  content_type: text/plain; charset=UTF-8
+  bytes: 12212
+  file: ../llms/little-spoon-llms.txt
+- host: www.littlespoon.com
+  path: /robots.txt
+  status: 200
+  note: 'User-agent: * Allow: / — no agent or crawler is disallowed; two sitemaps declared.'
+- host: api.littlespoon.com
+  path: /llms.txt
+  status: 404

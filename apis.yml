@@ -1,7 +1,17 @@
 aid: little-spoon
 name: Little Spoon
-description: 'Little Spoon is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Little Spoon is a New York-based direct-to-consumer children's food and nutrition brand, founded in
+  2017, that delivers fresh, organic, stage-based meals, snacks and infant formula for babies, toddlers
+  and kids on a subscription basis across the United States. Its product architecture maps to feeding
+  stages — Formula, Babyblends purees, Biteables finger foods, Baby Puffs, Baby Cereal, Smoothies and
+  YoGos, Lunchers, Plates and a snack line — with a frozen line sold exclusively through Target. The
+  brand competes on ingredient transparency: a published No-No List of 100+ banned ingredients, EU-level
+  food safety standards, 500+ toxin and contaminant tests, and 2000+ safety tests per batch of Formula.
+  Little Spoon operates no public developer program and publishes no API contract; its storefront is a
+  Next.js front end backed by an undocumented first-party JSON API at api.littlespoon.com. It does
+  publish two machine-readable public artifacts — an llms.txt at the site root and an open-source React
+  design system distributed as fifteen @littlespoon/* npm packages from the little-spoon-dev GitHub org.
 url: https://raw.githubusercontent.com/api-evangelist/little-spoon/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -10,8 +20,18 @@ x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-25'
 modified: '2026-08-25'
+image: https://ik.imagekit.io/littlespoon/web/fe-assets/public/imgs/og-image.jpg
 tags:
 - Company
+- Food and Beverage
+- Consumer Products
+- E-Commerce
+- Subscription
+- Direct to Consumer
+- Baby Food
+- Nutrition
+- Retail
+- Design System
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +40,64 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
+  url: https://www.littlespoon.com
+- type: HelpCenter
+  url: https://learn.littlespoon.com/
+- type: Support
+  url: https://www.littlespoon.com/contact
+- type: SignUp
+  url: https://www.littlespoon.com/plan-type
+- type: Login
+  url: https://www.littlespoon.com/login
+- type: TermsOfService
+  url: https://www.littlespoon.com/terms-and-conditions
+- type: PrivacyPolicy
+  url: https://www.littlespoon.com/privacy-policy
+- type: GitHubOrganization
+  url: https://github.com/little-spoon-dev
+- type: LLMsTxt
+  url: llms/little-spoon-llms.txt
+- type: Packages
+  url: packages/little-spoon-packages.yml
+- type: Components
+  url: components/little-spoon-components.yml
+- type: RateLimits
+  url: rate-limits/little-spoon-rate-limits.yml
+- type: Plans
+  url: plans/little-spoon-plans-pricing.yml
+- type: Conformance
+  url: conformance/little-spoon-conformance.yml
+- type: Lifecycle
+  url: lifecycle/little-spoon-lifecycle.yml
+- type: Conventions
+  url: conventions/little-spoon-conventions.yml
+- type: DomainSecurity
+  url: security/little-spoon-domain-security.yml
+- type: ListingVenue
   url: https://www.hiive.com/securities/little-spoon-stock
+x-enrichment:
+  date: '2026-08-25'
+  status: minimal
+  artifacts_added: 12
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Little Spoon runs no developer program at all — no portal, no docs, no signup, no spec: its
+    storefront is served by an undocumented first-party JSON backend at api.littlespoon.com that
+    answers /v1/products and /v1/labels unauthenticated but 404s every discovery path
+    (/openapi.json, /swagger.json, /graphql, /docs, /.well-known/*), so the only machine-readable
+    things it publishes are a marketing llms.txt and a React design system on npm.
+  evidence:
+    - url: https://api.littlespoon.com/v1/products
+      status: 200
+    - url: https://api.littlespoon.com/openapi.json
+      status: 404
+    - url: https://www.littlespoon.com/openapi.json
+      status: 404
+    - url: https://www.littlespoon.com/llms.txt
+      status: 200
+    - url: https://developer.littlespoon.com/
+      status: 522
+  checked: '2026-08-25'

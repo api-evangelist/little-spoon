@@ -1,0 +1,78 @@
+generated: '2026-08-25'
+method: searched
+source: https://github.com/little-spoon-dev/design-system + https://ds.littlespoon.com + https://www.npmjs.com/org/littlespoon
+provider: Little Spoon
+summary: >-
+  Little Spoon publishes an open-source React design system — the Little Spoon Design System — as a
+  Lerna monorepo of fifteen scoped npm packages. These are client-side UI components consumed by the
+  littlespoon.com Next.js storefront. They are NOT embeddable third-party surfaces: there is no hosted
+  widget, no drop-in checkout element, no embed script and no loader library, so a non-Little-Spoon
+  developer can install them but has nothing of Little Spoon's to embed. Recorded here because the
+  component library is real, first-party and publicly distributed.
+distribution:
+  registry: npm
+  scope: '@littlespoon'
+  loader_libraries: []
+  cdn_bundle: null
+  cdn_note: >-
+    No CDN/script-tag distribution is published. The packages ship as npm ESM/CJS builds only, so
+    there is no unpkg/jsDelivr pinned URL to read a version from.
+documentation:
+  storybook: https://ds.littlespoon.com
+  storybook_status: 200
+  storybook_note: >-
+    Serves a 2,206-byte JS-rendered Storybook shell (<title>Webpack App</title>); the component
+    reference only exists after script execution, so nothing is machine-readable at that URL.
+  zeroheight: null
+  repo: https://github.com/little-spoon-dev/design-system
+  repo_pushed_at: '2025-09-08T15:13:06Z'
+  repo_language: TypeScript
+  repo_license: none
+families:
+- family: Layout + primitives
+  components:
+  - name: '@littlespoon/box'
+    version: 1.3.7
+  - name: '@littlespoon/divider'
+    version: 1.2.2
+  - name: '@littlespoon/theme'
+    version: 1.16.0
+  - name: '@littlespoon/typography'
+    version: 1.8.0
+- family: Navigation
+  components:
+  - name: '@littlespoon/breadcrumbs'
+    version: 1.3.8
+  - name: '@littlespoon/link'
+    version: 1.3.4
+  - name: '@littlespoon/drawer'
+    version: 1.6.4
+  - name: '@littlespoon/accordion'
+    version: 1.1.8
+- family: Forms + actions
+  components:
+  - name: '@littlespoon/button'
+    version: 1.8.2
+  - name: '@littlespoon/checkbox'
+    version: 1.3.7
+  - name: '@littlespoon/label'
+    version: 1.1.7
+- family: Feedback + display
+  components:
+  - name: '@littlespoon/alert'
+    version: 1.4.6
+  - name: '@littlespoon/tag'
+    version: 1.3.16
+  - name: '@littlespoon/icons'
+    version: 2.1.4
+- family: Aggregate
+  components:
+  - name: '@littlespoon/ui'
+    version: 1.23.0
+    note: Umbrella package re-exporting the individual component packages.
+component_count: 15
+embedded_surface_count: 0
+notes:
+- Version and publish metadata for every package is carried as structured fields in
+  packages/little-spoon-packages.yml.
+- Whole system last released 2025-09-08; @littlespoon/divider last released 2023-04-19.

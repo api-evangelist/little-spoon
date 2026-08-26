@@ -1,0 +1,66 @@
+generated: '2026-08-25'
+method: probed
+source: >-
+  Observed on live unauthenticated responses from https://api.littlespoon.com/v1,
+  https://api.littlespoon.com/health and https://api.littlespoon.com/v1/products, 2026-08-25.
+  Little Spoon publishes no rate-limit documentation; every value below was read off the wire.
+provider: Little Spoon
+documented: false
+documentation_url: null
+summary: >-
+  Little Spoon's undocumented first-party API host emits a full non-standard rate-limit header
+  triplet on every response — rate-limit-total, rate-limit-remaining and rate-limit-reset. The
+  headers use the bare `rate-limit-*` form rather than the IETF `RateLimit-*` draft form or the
+  common `X-RateLimit-*` convention, so a generic client will not pick them up. No Retry-After was
+  observed because the budget was never exhausted during this probe.
+limit_count: 1
+limits:
+- id: default-unauthenticated
+  scope: per-client
+  scope_note: >-
+    Inferred from the counter decrementing across consecutive requests from one source address; the
+    exact keying (IP, session, or origin) is not documented and was not tested.
+  limit: 1000
+  window: >-
+    Fixed window ending at the epoch second given in rate-limit-reset. Successive probes at
+    2026-08-25T00:19:58Z and 00:20:16Z both returned rate-limit-reset 1787703658, so the window is a
+    fixed reset instant rather than a rolling one; the window length was not established.
+  burst: null
+  observed:
+  - url: https://api.littlespoon.com/
+    status: 404
+    rate_limit_total: 1000
+    rate_limit_remaining: 999
+    rate_limit_reset: 1787703658
+  - url: https://api.littlespoon.com/v1
+    status: 200
+    rate_limit_total: 1000
+    rate_limit_remaining: 971
+    rate_limit_reset: 1787703658
+response_headers:
+- header: rate-limit-total
+  meaning: Total requests allowed in the current window.
+  observed_value: '1000'
+  standard: none — non-standard spelling; not RFC 9331/IETF RateLimit-* and not X-RateLimit-*.
+- header: rate-limit-remaining
+  meaning: Requests left in the current window.
+  observed_value: '971'
+  standard: none
+- header: rate-limit-reset
+  meaning: Unix epoch seconds at which the window resets.
+  observed_value: '1787703658'
+  standard: none
+- header: Retry-After
+  meaning: Not observed; the limit was never exhausted during probing.
+  observed_value: null
+  standard: RFC 9110
+exhaustion:
+  status_code: null
+  note: >-
+    Not established. The pipeline does not exhaust a provider's rate limit to observe the 429
+    response, so the status code and body on exhaustion are unknown.
+notes:
+- Rate limiting is applied even to 404 responses, so the counter is enforced at the edge/router
+  rather than per-route.
+- 'Every response also carries Heroku NEL/reporting headers (report-to, reporting-endpoints,
+  via: 2.0 heroku-router) and Cloudflare cf-ray, confirming a Cloudflare-fronted Heroku origin.'
