@@ -1,16 +1,161 @@
 generated: '2026-10-12'
-method: none
+method: searched
 source:
 - https://zapier.com/apps/little-spoon/integrations
 - https://n8n.io/integrations/little-spoon/
 - https://composio.dev/toolkits/little-spoon
 - https://monid.ai/tools/little-spoon
 checked:
+- https://api.nuget.org/v3
 - https://composio.dev/toolkits/little-spoon
+- https://crates.io/api/v1
 - https://monid.ai/tools/little-spoon
 - https://n8n.io/integrations/little-spoon/
+- https://proxy.golang.org
+- https://pypi.org/pypi
+- https://registry.npmjs.org
+- https://repo1.maven.org/maven2
+- https://rubygems.org/api/v1
 - https://zapier.com/apps/little-spoon/integrations
 summary: null
 marketplace_apps: []
-edges: []
+edges:
+- partner_name: npm registry
+  partner: npm
+  partner_match: register
+  type: register
+  direction: provider-built
+  category: official SDK (JavaScript/TypeScript)
+  evidence: https://www.npmjs.com/package/@littlespoon/accordion
+  channel: package-registry
+  relationship: distribution-channel
+  contract_reference:
+    register: npm registry (public registry JSON)
+    spec_file: null
+    language: JavaScript/TypeScript
+    packages:
+    - name: '@littlespoon/accordion'
+      version: 1.1.8
+      released: '2025-09-08'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@littlespoon/accordion
+      repo_leg: github-org:little-spoon-dev
+      publisher_leg: email:littlespoon.com
+      matched_by: domain
+    - name: '@littlespoon/alert'
+      version: 1.4.6
+      released: '2025-09-08'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@littlespoon/alert
+      repo_leg: github-org:little-spoon-dev
+      publisher_leg: email:littlespoon.com
+      matched_by: domain
+    - name: '@littlespoon/box'
+      version: 1.3.7
+      released: '2025-09-08'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@littlespoon/box
+      repo_leg: github-org:little-spoon-dev
+      publisher_leg: email:littlespoon.com
+      matched_by: domain
+    - name: '@littlespoon/breadcrumbs'
+      version: 1.3.8
+      released: '2025-09-08'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@littlespoon/breadcrumbs
+      repo_leg: github-org:little-spoon-dev
+      publisher_leg: email:littlespoon.com
+      matched_by: domain
+    - name: '@littlespoon/button'
+      version: 1.8.2
+      released: '2025-09-08'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@littlespoon/button
+      repo_leg: github-org:little-spoon-dev
+      publisher_leg: email:littlespoon.com
+      matched_by: domain
+    - name: '@littlespoon/checkbox'
+      version: 1.3.7
+      released: '2025-09-08'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@littlespoon/checkbox
+      repo_leg: github-org:little-spoon-dev
+      publisher_leg: email:littlespoon.com
+      matched_by: domain
+    - name: '@littlespoon/divider'
+      version: 1.2.2
+      released: '2023-04-19'
+      released_field: modified
+      lapsed: true
+      page: https://www.npmjs.com/package/@littlespoon/divider
+      repo_leg: github-org:little-spoon-dev
+      publisher_leg: email:littlespoon.com
+      matched_by: domain
+    - name: '@littlespoon/drawer'
+      version: 1.6.4
+      released: '2025-09-08'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@littlespoon/drawer
+      repo_leg: github-org:little-spoon-dev
+      publisher_leg: email:littlespoon.com
+      matched_by: domain
+    - name: '@littlespoon/label'
+      version: 1.1.7
+      released: '2025-09-08'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@littlespoon/label
+      repo_leg: github-org:little-spoon-dev
+      publisher_leg: email:littlespoon.com
+      matched_by: domain
+    - name: '@littlespoon/link'
+      version: 1.3.4
+      released: '2025-09-08'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@littlespoon/link
+      repo_leg: github-org:little-spoon-dev
+      publisher_leg: email:littlespoon.com
+      matched_by: domain
+    - name: '@littlespoon/tag'
+      version: 1.3.16
+      released: '2025-09-08'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@littlespoon/tag
+      repo_leg: github-org:little-spoon-dev
+      publisher_leg: email:littlespoon.com
+      matched_by: domain
+    - name: '@littlespoon/typography'
+      version: 1.8.0
+      released: '2025-09-08'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@littlespoon/typography
+      repo_leg: github-org:little-spoon-dev
+      publisher_leg: email:littlespoon.com
+      matched_by: domain
+    - name: '@littlespoon/ui'
+      version: 1.23.0
+      released: '2025-09-08'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@littlespoon/ui
+      repo_leg: github-org:little-spoon-dev
+      publisher_leg: email:littlespoon.com
+      matched_by: domain
+    current: true
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  detected_by: sweep-official-sdks.py
+  first_seen: '2026-10-18'
 templates: []
