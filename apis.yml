@@ -55,7 +55,6 @@ tags:
 - Baby Food
 - Nutrition
 - Retail
-- Design Systems
 tags_raw:
 - Company
 - Food and Beverage
@@ -66,7 +65,6 @@ tags_raw:
 - Baby Food
 - Nutrition
 - Retail
-- Design System
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -136,3 +134,5 @@ x-coverage:
     - url: https://developer.littlespoon.com/
       status: 522
   checked: '2026-08-25'
+x-tags-removed:
+- Design Systems
