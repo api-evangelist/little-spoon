@@ -64,5 +64,96 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Little Spoon is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.hiive.com/securities/little-spoon-stock
+Little Spoon is a New York-based direct-to-consumer children's food and nutrition brand, founded in 2017, that delivers fresh, organic, stage-based meals, snacks and infant formula for babies, toddlers and kids on a subscription basis across the United States. Its product architecture maps to feeding stages — Formula, Babyblends purees, Biteables finger foods, Baby Puffs, Baby Cereal, Smoothies and YoGos, Lunchers, Plates and a snack line — with a frozen line sold exclusively through Target. The brand competes on ingredient transparency: a published No-No List of 100+ banned ingredients, EU-level food safety standards, 500+ toxin and contaminant tests, and 2000+ safety tests per batch of Formula. Little Spoon operates no public developer program and publishes no API contract; its storefront is a Next.js front end backed by an undocumented first-party JSON API at api.littlespoon.com. It does publish two machine-readable public artifacts — an llms.txt at the site root and an open-source React design system distributed as fifteen @littlespoon/* npm packages from the little-spoon-dev GitHub org.
+
+**Areas:** Company · Food and Beverage · Consumer Products · E-Commerce · Subscription · Direct to Consumer · Baby Food · Nutrition · Retail · Design Systems
+
+## Little Spoon on APIs.io
+
+Everything profiled for Little Spoon is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/little-spoon/](https://apis.io/providers/little-spoon/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Little Spoon Domain Security](https://apis.io/security/little-spoon/little-spoon-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Little Spoon Plans Pricing](https://apis.io/plans/little-spoon/little-spoon-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Little Spoon Rate Limits](https://apis.io/rate-limits/little-spoon/little-spoon-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.littlespoon.com)
+- [Sign up](https://www.littlespoon.com/plan-type)
+- [Support](https://www.littlespoon.com/contact)
+- [Terms of service](https://www.littlespoon.com/terms-and-conditions)
+- [Privacy policy](https://www.littlespoon.com/privacy-policy)
+- [GitHub](https://github.com/little-spoon-dev)
+
+## API Evangelist rating
+
+**Kin Score 16.9** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 23.7 |
+| Developer ergonomics | 4.8 |
+| Access clarity | 34.2 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 18.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/little-spoon/](https://apis.io/providers/little-spoon/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Little Spoon: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/little-spoon/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
